@@ -119,7 +119,7 @@ steam-game-visualizer/
 ├── requirements.txt
 └── README.md
 
-🤝 Contributing
+## 🤝 Contributing
 Feel free to fork this repo, create an issue, or submit a pull request!
 
 vbnet
