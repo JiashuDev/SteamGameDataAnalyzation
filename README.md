@@ -6,6 +6,7 @@ All game data is stored and managed using a **relational SQL database** for effi
 
 ## 🌟 Features
 
+- 🔐 **User sign-up/login system** to save and personalize data
 - 🔍 **Search** for games by keyword
 - 📊 **Visualize game data** across various categories using dynamic graphs
 - ☁️ Generate **word clouds** from game tags and genres
@@ -27,7 +28,21 @@ All game data is stored and managed using a **relational SQL database** for effi
 - **Visualization**: ECharts, WordCloud
 - **Recommendation System**: User-based Collaborative Filtering
 
+### 🔐 User Authentication
+
+Users can sign up and log in to:
+
+- Save preferences and browsing history
+- Receive personalized game recommendations
+- Access user-specific data and suggestions
+
 ## 📸 Screenshots
+
+### 🖼️ Login & Sign-Up Screens
+
+![Login Page](images/login.png)
+![Sign Up Page](images/signup.png)
+
 ### 🏠 Home Page
 
 The home page offers an intuitive and clean interface where users can:
