@@ -28,6 +28,16 @@ All game data is stored and managed using a **relational SQL database** for effi
 - **Recommendation System**: User-based Collaborative Filtering
 
 ## 📸 Screenshots
+### 🏠 Home Page
+
+The home page offers an intuitive and clean interface where users can:
+
+- See featured game categories and quick stats
+- Navigate to visualizations, recommendations, and more
+
+### 🖼️ Home Page Preview
+
+![Home Page](images/homepage.png)
 
 ### 🔍 Game Search Interface
 ![Search](images/search.png)
