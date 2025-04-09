@@ -68,8 +68,6 @@ The home page offers an intuitive and clean interface where users can:
 ### 🎯 Game Recommendations
 ![Recommendation](image/recommendation.png)
 
-> 💡 *Replace the image paths (`images/...`) with your actual image locations or URLs.*
-
 ## 🚀 How to Run
 
 1. **Clone the repository**
