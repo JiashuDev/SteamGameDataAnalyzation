@@ -93,3 +93,10 @@ steam-game-visualizer/
 ├── database.py
 ├── requirements.txt
 └── README.md
+
+🤝 Contributing
+Feel free to fork this repo, create an issue, or submit a pull request!
+
+vbnet
+Copy
+Edit
