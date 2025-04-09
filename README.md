@@ -40,8 +40,8 @@ Users can sign up and log in to:
 
 ### 🖼️ Login & Sign-Up Screens
 
-![Login Page](images/login.png)
-![Sign Up Page](images/signup.png)
+![Login Page](image/login.png)
+![Sign Up Page](image/signup.png)
 
 ### 🏠 Home Page
 
