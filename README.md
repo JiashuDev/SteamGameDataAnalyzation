@@ -40,7 +40,7 @@ Users can sign up and log in to:
 
 ### 🖼️ Login & Sign-Up Screens
 
-<img src="image/sinup.png" alt="login Page" width="500"/>
+<img src="image/signup.png" alt="login Page" width="500"/>
 
 ### 🏠 Home Page
 
@@ -62,8 +62,8 @@ The home page offers an intuitive and clean interface where users can:
 <img src="image/visual2.png" alt="Visual" width="500"/>
 
 ### ☁️ Word Cloud
-<img src="image/cloud1.png" alt="cloud" width="500"/>
-<img src="image/cloud2.png" alt="cloud" width="500"/>
+<img src="image/wordcloud1.png" alt="cloud" width="500"/>
+<img src="image/wordcloud2.png" alt="cloud" width="500"/>
 
 ### 🎯 Game Recommendations
 <img src="image/recommendation.png" alt="recommendation" width="500"/>
