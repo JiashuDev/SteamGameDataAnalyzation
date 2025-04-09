@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Steam Game Data Visualization</title>
+    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description">
+
+    <link href="/static/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="/static/css/morris.css">
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="header-bg">
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="topbar-main">
+            <div class="container-fluid">
+
+                <!-- Logo-->
+                <div>
+                    <a href="" class="logo">
+                        <p style="font-size : 35px"><img src="/static/picture/download%20(1).jfif" class="logo-lg"
+                                                         alt="" height="45"> Steam Game Data Analyzer</p>
+
+                    </a>
+                </div>
+                <!-- End Logo-->
+
+                <div class="menu-extras topbar-custom navbar p-0">
+
+                    <!-- Search input -->
+                    <div class="search-wrap" id="search-wrap">
+                        <div class="search-bar">
+                            <input class="search-input" type="search" placeholder="Search">
+                            <a href="#" class="close-search toggle-search" data-target="#search-wrap">
+                                <i class="mdi mdi-close-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-right ml-auto list-inline float-right mb-0">
+
+                        <li class="list-inline-item dropdown notification-list d-none d-md-inline-block">
+
+                        </li>
+
+                        <!-- language-->
+                        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated language-switch">
+                                <a class="dropdown-item" href="#"><img src="/static/picture/french_flag.jpg" alt=""
+                                                                       height="16"><span> French </span></a>
+                                <a class="dropdown-item" href="#"><img src="/static/picture/spain_flag.jpg" alt=""
+                                                                       height="16"><span> Spanish </span></a>
+                                <a class="dropdown-item" href="#"><img src="/static/picture/russia_flag.jpg" alt=""
+                                                                       height="16"><span> Russian </span></a>
+                                <a class="dropdown-item" href="#"><img src="/static/picture/germany_flag.jpg" alt=""
+                                                                       height="16"><span> German </span></a>
+                                <a class="dropdown-item" href="#"><img src="/static/picture/italy_flag.jpg" alt=""
+                                                                       height="16"><span> Italian </span></a>
+                            </div>
+                        </li>
+
+                        <!-- full screen -->
+                        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+
+                        </li>
+
+                        <!-- notification -->
+                        <li class="dropdown notification-list list-inline-item">
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg px-1">
+                                <!-- item-->
+                                <h6 class="dropdown-item-text">
+                                    Notifications
+                                </h6>
+                                <div class="slimscroll notification-item-list">
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                        <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                        <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i>
+                                        </div>
+                                        <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-info"><i class="mdi mdi-filter-outline"></i></div>
+                                        <p class="notify-details"><b>Your item is shipped</b><span class="text-muted">It is a long established fact that a reader will</span>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-success"><i class="mdi mdi-message-text-outline"></i>
+                                        </div>
+                                        <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-warning"><i class="mdi mdi-cart-outline"></i></div>
+                                        <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span>
+                                        </p>
+                                    </a>
+
+                                </div>
+                                <!-- All-->
+                                <a href="javascript:void(0);" class="dropdown-item text-center notify-all text-primary">
+                                    View all <i class="fi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list list-inline-item">
+                            <div class="dropdown notification-list nav-pro-img">
+                                <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user"
+                                   data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                   aria-expanded="false">
+                                    {{ username }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown">
+                                    <!-- item-->
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="/logOut"><i
+                                            class="mdi mdi-power text-danger"></i> Logout</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="menu-item dropdown notification-list list-inline-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle nav-link">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- end menu-extras -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end topbar-main -->
+
+        <!-- start content -->
+        <div class="bg-dark">
+            <div class="container-fluid">
+                <div class="row align-items-center ">
+                    <div class="col-md-8">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Game Data Analyzer</h4>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active">Main Page</li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row top-content">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-6">
+                                <h5 class="font-16 text-white">Most Game Type</h5>
+                                <h4 class="text-info pt-1 mb-0">{{ typeSort }}</h4>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="chart1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-6">
+                                <h5 class="font-12 text-white">Most Discounted Game</h5>
+                                <h4 class="text-warning pt-1 mb-0">{{ maxDiscountTitle }}</h4>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="chart2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-6">
+                                <h5 class="font-16 text-white">User Number</h5>
+                                <h4 class="text-primary pt-1 mb-0">{{ maxUserLen }}</h4>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="chart3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-3">
+
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-6">
+                                <h5 class="font-16 text-white">Game Number</h5>
+                                <h4 class="text-danger pt-1 mb-0">{{ maxGames }}</h4>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="chart4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end content -->
+
+        <!-- MENU Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+
+                <div id="navigation">
+
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li class="has-submenu">
+                            <a href="/home"><i class="dripicons-meter"></i>Main Page</a>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="/dataForm"><i class="dripicons-briefcase"></i>Data Form</a>
+
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="/search"><i class="dripicons-broadcast"></i>Game Search</a>
+
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="dripicons-view-thumb"></i>Data Analyze</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="/price">Price</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="/type">Type</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="/rate">Rating</a>
+                                </li>
+
+                                <li>
+                                    <a href="/dev">Developer and Publisher</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="/other">Others</a>
+
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="dripicons-to-do"></i>Word Cloud Diagram</a>
+                            <ul class="submenu megamenu">
+                                <li><a href="/titleCloud">Game Name Cloud</a></li>
+                                <li><a href="/summaryCloud">Summary Cloud</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="/recommend"><i class="dripicons-to-do"></i>Recommend</a>
+
+                        </li>
+                    </ul>
+                    <!-- End navigation menu -->
+                </div>
+                <!-- end #navigation -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end navbar-custom -->
+    </header>
+    <!-- End Navigation Bar-->
+
+</div>
+<!-- header-bg -->
+
+<div class="wrapper">
+    <div class="container-fluid">
+
+        <!-- end row -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Search:</h4>
+                        <form action="/price" method="post" class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <select name="year" class="form-select" aria-label="default select example">
+                                    {% for i in yearList %}
+                                        {% if defaultYear == i %}
+                                            <option value="{{ i }}" selected>{{ i }}</option>
+                                        {% else %}
+                                            <option value="{{ i }}">{{ i }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" style="margin-left: 15px" class="btn btn-primary mb-2">Search</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Original Price Difference</h4>
+                        <div id="main" style="width: 100%; height: 350px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Discounted Price Difference</h4>
+                        <div id="mains" style="width: 100%; height: 350px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end wrapper -->
+
+<!-- Footer -->
+<footer class="footer">
+    Copyright &copy; 2024. by Jiashu Li. All rights reserved.
+</footer>
+
+<!-- End Footer -->
+
+<!-- jQuery  -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/jquery.slimscroll.js"></script>
+<script src="/static/js/waves.min.js"></script>
+
+<!-- Plugins js -->
+<script src="/static/js/apexcharts.min.js"></script>
+<script src="/static/js/bootstrap-datepicker.min.js"></script>
+
+<!--Morris Chart-->
+<script src="/static/js/morris.min.js"></script>
+<script src="/static/js/raphael.min.js"></script>
+<script src="/static/js/dashboard.init.js"></script>
+
+<script src="/static/js/datatables.init.js"></script>
+<script src="/static/js/jquery.dataTables.min.js"></script>
+<script src="/static/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- App js -->
+<script src="/static/js/app.js"></script>
+<script src="/static/js/echarts.js"></script>
+<script>
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        title: {
+            text: "Original Price Difference"
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: "#6a7985"
+                }
+            }
+        },
+        legend: {
+            data: ['data']
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true,
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            axisLine: {
+                onZero: false,
+                lineStyle: {
+                    color: '#4b87a9'
+                }
+            },
+            data: {{ x1Data | tojson }}
+        },
+        yAxis: {
+            type: 'value',
+            axisLine: {
+                onZero: false,
+                lineStyle: {
+                    color: '#4b87a9'
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        series: [
+            {
+                name: "data",
+                symbol: 'circle',
+                symbolSize: 10,
+                itemStyle: {
+                    normal: {
+                        color: '#fff',
+                        borderColor: '#4bc8db',
+                        areaStyle: {
+                            type: 'default',
+                            opacity: 0.4
+                        }
+                    }
+                },
+                lineStyle: {
+                    color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
+                            offset: 0, color: '#4c84FF'
+                        },
+                            {
+                                offset: 1, color: '#28d016'
+                            }],
+                        globalCoord: false
+                    },
+                    width: 2,
+                    shadowBlur: 10,
+                    shadowColor: 'rgba(50, 227, 42, 0.5)',
+                    shadowOffsetX: 10,
+                    shadowOffsetY: 20
+                },
+                areaStyle: {
+                    normal: {
+                        color: 'rgba(255,255,255,0)'
+                    }
+                },
+                data: {{ y1Data}},
+                type: 'line',
+                smooth: true
+            }
+        ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+
+<script>
+    var chartDom = document.getElementById('mains');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+        title: {
+            text: "Discounted Price Difference"
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: "#6a7985"
+                }
+            }
+        },
+        legend: {
+            data: ['data']
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '30%']
+        },
+        visualMap: {
+            type: 'piecewise',
+            show: false,
+            dimension: 0,
+            seriesIndex: 0,
+            pieces: [
+                {
+                    gt: 1,
+                    lt: 3,
+                    color: 'rgba(0, 0, 180, 0.4)'
+                },
+                {
+                    gt: 5,
+                    lt: 7,
+                    color: 'rgba(0, 0, 180, 0.4)'
+                }
+            ]
+        },
+        series: [
+            {
+                type: 'line',
+                smooth: 0.6,
+
+                name: "data",
+                symbol: 'circle',
+                symbolSize: 10,
+                lineStyle: {
+                    color: '#5470C6',
+                    width: 5
+                },
+                markLine: {
+                    symbol: ['none', 'none'],
+                    label: {show: false},
+                    data: [{xAxis: 1}, {xAxis: 3}, {xAxis: 5}, {xAxis: 7}]
+                },
+                areaStyle: {},
+                data: {{ resData | tojson }}
+            }
+        ]
+    };
+
+    option && myChart.setOption(option);
+
+</script>
+
+</body>
+
+</html>
