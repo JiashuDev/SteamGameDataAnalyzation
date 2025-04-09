@@ -40,7 +40,6 @@ Users can sign up and log in to:
 
 ### 🖼️ Login & Sign-Up Screens
 
-![Login Page](image/login.png)
 ![Sign Up Page](image/signup.png)
 
 ### 🏠 Home Page
@@ -52,19 +51,22 @@ The home page offers an intuitive and clean interface where users can:
 
 ### 🖼️ Home Page Preview
 
-![Home Page](images/homepage.png)
+![Home Page](image/homepage1.png)
+![Home Page](image/homepage2.png)
 
 ### 🔍 Game Search Interface
-![Search](images/search.png)
+![Search](image/search.png)
 
 ### 📊 Data Visualization
-![Graphs](images/graphs.png)
+![Graphs](image/visual1.png)
+![Graphs](image/visual2.png)
 
 ### ☁️ Word Cloud
-![Word Cloud](images/wordcloud.png)
+![Word Cloud](image/wordcloud1.png)
+![Word Cloud](image/wordcloud2.png)
 
 ### 🎯 Game Recommendations
-![Recommendation](images/recommendation.png)
+![Recommendation](image/recommendation.png)
 
 > 💡 *Replace the image paths (`images/...`) with your actual image locations or URLs.*
 
