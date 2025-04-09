@@ -51,8 +51,8 @@ The home page offers an intuitive and clean interface where users can:
 
 ### 🖼️ Home Page Preview
 
-![Home Page](image/mainpage1.png)
-![Home Page](image/mainpage2.png)
+<img src="image/mainpage1.png" alt="Login Page" width="400"/>
+<img src="image/mainpage2.png" alt="Sign Up Page" width="400"/>
 
 ### 🔍 Game Search Interface
 ![Search](image/search.png)
